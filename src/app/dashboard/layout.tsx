@@ -2,7 +2,7 @@
 
 import { useAuth } from '@/lib/hooks/use-auth'
 import { redirect } from 'next/navigation'
-import { Home, Calendar, GraduationCap, Trophy, Bot, Bell, LogOut, User, Menu } from 'lucide-react'
+import { Home, Calendar, GraduationCap, Trophy, Bot, Bell, LogOut, User, Menu, FileText, Clock, Settings } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -34,8 +34,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     { icon: Home, label: 'Home', href: '/dashboard' },
     { icon: Calendar, label: 'Attendance', href: '/dashboard/attendance' },
     { icon: GraduationCap, label: 'Grades', href: '/dashboard/grades' },
+    { icon: FileText, label: 'Missions', href: '/dashboard/assignments' },
+    { icon: Clock, label: 'Schedule', href: '/dashboard/schedule' },
     { icon: Trophy, label: 'Achievements', href: '/dashboard/achievements' },
-    { icon: Bot, label: 'AI Buddy', href: '/dashboard/ai-buddy' },
+    { icon: Bot, label: 'Neural Link', href: '/dashboard/ai-buddy' },
   ]
 
   const isActive = (href: string) => {
@@ -115,11 +117,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                       </div>
                       <div className="space-y-1">
                         <Link
-                          href="/dashboard/profile"
+                          href="/dashboard/settings"
                           className="flex items-center gap-3 px-3 py-2 hover:bg-white/5 rounded-lg transition-colors text-sm text-text-secondary hover:text-white"
                         >
-                          <User className="w-4 h-4" />
-                          <span>Profile</span>
+                          <Settings className="w-4 h-4" />
+                          <span>System Config</span>
                         </Link>
                         <button
                           onClick={() => signOut()}
@@ -146,7 +148,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Mobile Bottom Navigation */}
       <nav className="md:hidden fixed bottom-4 left-4 right-4 bg-black/80 backdrop-blur-xl border border-white/10 z-40 rounded-2xl shadow-2xl">
         <div className="flex justify-around py-3">
-          {navItems.map((item) => {
+          {navItems.slice(0, 5).map((item) => { // Limit to 5 items for mobile bar
+            const Icon = item.icon
+            const active = isActive(item.href)
             const Icon = item.icon
             const active = isActive(item.href)
             return (

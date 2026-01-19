@@ -9,23 +9,18 @@
 - [ ] Firebase CLI installed (`npm i -g firebase-tools`)
 - [ ] Vercel CLI installed (`npm i -g vercel`)
 
-### Firebase Configuration
-- [ ] Firebase project created
-- [ ] Firebase Authentication enabled (Email/Password)
-- [ ] Firestore Database created (production mode)
-- [ ] Firebase Storage enabled
-- [ ] Security rules deployed (`firebase deploy --only firestore:rules,storage`)
-- [ ] Composite indexes created (auto-created on first queries)
+### Supabase Configuration
+- [ ] Supabase project created
+- [ ] Authentication enabled (Email/Password)
+- [ ] Database schema applied
+- [ ] Storage buckets created
+- [ ] RLS policies enabled
+- [ ] Performance indexes created
 
 ### Environment Variables
-- [ ] `.env.local` created with all Firebase config
-- [ ] `NEXT_PUBLIC_FIREBASE_API_KEY` set
-- [ ] `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN` set
-- [ ] `NEXT_PUBLIC_FIREBASE_PROJECT_ID` set
-- [ ] `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET` set
-- [ ] `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID` set
-- [ ] `NEXT_PUBLIC_FIREBASE_APP_ID` set
-- [ ] `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID` set
+- [ ] `.env.local` created with Supabase config
+- [ ] `NEXT_PUBLIC_SUPABASE_URL` set
+- [ ] `NEXT_PUBLIC_SUPABASE_ANON_KEY` set
 - [ ] `OPENAI_API_KEY` set (optional, for AI features)
 
 ### Code Quality
@@ -108,7 +103,9 @@
 - [ ] App loads on Vercel URL
 
 ### Environment Variables (Vercel Dashboard)
-- [ ] All Firebase variables added to Vercel
+- [ ] Supabase variables added to Vercel
+- [ ] `NEXT_PUBLIC_SUPABASE_URL` set
+- [ ] `NEXT_PUBLIC_SUPABASE_ANON_KEY` set
 - [ ] Variables set for Production environment
 - [ ] Variables set for Preview environment (optional)
 - [ ] Redeployed after adding variables
@@ -134,7 +131,8 @@
 
 ### Security Verification
 - [ ] HTTPS enabled (automatic with Vercel)
-- [ ] Firebase security rules active
+- [ ] HTTPS enabled (automatic with Vercel)
+- [ ] Supabase RLS policies active
 - [ ] No sensitive data exposed in client
 - [ ] Environment variables secure
 - [ ] CORS configured correctly
@@ -142,7 +140,7 @@
 
 ### Performance Monitoring
 - [ ] Vercel Analytics enabled
-- [ ] Firebase usage monitored
+- [ ] Supabase usage monitored
 - [ ] Error tracking set up (optional: Sentry)
 - [ ] Performance metrics tracked
 - [ ] Uptime monitoring configured (optional)
@@ -218,11 +216,9 @@ vercel rollback
 2. Find previous working deployment
 3. Click "..." → Promote to Production
 
-**Firebase Rollback:**
-```bash
-firebase deploy --only firestore:rules
-firebase deploy --only storage
-```
+**Supabase Rollback:**
+- Revert schema changes via migration scripts
+- Restore database backup if necessary
 
 ---
 
@@ -251,7 +247,7 @@ firebase deploy --only storage
 ## Resources
 
 - [Vercel Documentation](https://vercel.com/docs)
-- [Firebase Documentation](https://firebase.google.com/docs)
+- [Supabase Documentation](https://supabase.com/docs)
 - [Next.js Production Checklist](https://nextjs.org/docs/going-to-production)
 - [Web Performance](https://web.dev/vitals/)
 

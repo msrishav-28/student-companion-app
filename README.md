@@ -8,20 +8,17 @@ A standalone, AI-powered student companion app for managing attendance, grades, 
 # 1. Install dependencies
 npm install
 
-# 2. Set up Firebase project
-# Go to console.firebase.google.com → Create project
-# Enable Authentication, Firestore, and Storage
+# 2. Set up Supabase project
+# Go to supabase.com → Create project
+# Get URL and ANON_KEY from API settings
 
 # 3. Set up environment variables
 cp .env.example .env.local
-# Add your Firebase configuration from Project Settings
+# Add your Supabase configuration:
+# NEXT_PUBLIC_SUPABASE_URL=...
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 
-# 4. Deploy Firebase security rules
-firebase login
-firebase init
-firebase deploy --only firestore:rules,storage
-
-# 5. Start development server
+# 4. Start development server
 npm run dev
 ```
 
@@ -67,7 +64,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ## 🛠️ Tech Stack
 - **Frontend:** Next.js 14, React 18, TypeScript
 - **Styling:** Tailwind CSS, Framer Motion
-- **Backend:** Firebase (Firestore, Auth, Storage, Analytics)
+- **Backend:** Supabase (PostgreSQL, Auth, Storage, Realtime)
 - **State:** Zustand, React Query
 - **UI Components:** Lucide Icons, Recharts, React Confetti
 - **OCR/PDF:** PDF.js, Tesseract.js
@@ -80,7 +77,7 @@ src/
 ├── app/                  # Next.js 14 App Router
 ├── components/          # React components (UI, gamification, AI)
 ├── lib/
-│   ├── firebase/       # Firebase config & client
+│   ├── supabase/       # Supabase config & client
 │   ├── services/       # AI, OCR, Gamification, ML services
 │   ├── utils/          # Calculations, date helpers
 │   └── hooks/          # Custom React hooks
@@ -94,7 +91,7 @@ src/
 - **[DEPLOYMENT-CHECKLIST.md](DEPLOYMENT-CHECKLIST.md)** - Pre & post-deployment checklist ✅
 - **[QUICK_START.md](QUICK_START.md)** - Step-by-step setup guide
 - **[IMPLEMENTATION-GUIDE.md](IMPLEMENTATION-GUIDE.md)** - Complete development guide ⭐
-- **[FIREBASE-PRODUCTION-READY.md](FIREBASE-PRODUCTION-READY.md)** - Firebase setup & deployment 🔥
+- **[SUPABASE-SETUP.md](SUPABASE-SETUP.md)** - Supabase setup & schema guide ⚡
 - **[FEATURES-INTEGRATION.md](FEATURES-INTEGRATION.md)** - Integration examples & code snippets
 - **[ADVANCED-FEATURES.md](ADVANCED-FEATURES.md)** - Advanced features guide
 - **[COMPLETE-UI-IMPLEMENTATION.md](COMPLETE-UI-IMPLEMENTATION.md)** - Page code templates
@@ -103,9 +100,9 @@ src/
 
 ## 🗄️ Database Architecture
 
-**Firebase Firestore** - NoSQL database with real-time synchronization
+**Supabase PostgreSQL** - Relational database with real-time subscriptions
 
-**Core Collections:**
+**Core Tables:**
 - `students` - User profiles with XP & level tracking
 - `subjects` - Course information and credits
 - `attendance` - Daily attendance records with status
@@ -128,13 +125,13 @@ src/
 - `ai_messages` - Individual chat messages
 - `predictions` - ML-generated performance predictions
 
-All collections secured with Firestore security rules and optimized with composite indexes.
+All tables secured with Row Level Security (RLS) policies and optimized with indexes.
 
 ## 🎯 Getting Started
 
 ### Development Roadmap
 
-1. **Setup (Week 1)** - Install dependencies, configure Firebase, deploy security rules
+1. **Setup (Week 1)** - Install dependencies, configure Supabase, apply schema
 2. **Core Features (Week 2-3)** - Authentication, attendance tracking, grade management
 3. **Gamification (Week 4)** - XP system, achievements, streaks, leaderboards
 4. **AI & ML (Week 5-6)** - Study buddy, predictions, risk assessment
@@ -156,26 +153,22 @@ vercel --prod
 
 **Add environment variables in Vercel Dashboard:**
 - Go to your project → Settings → Environment Variables
-- Add all Firebase configuration variables
+**Add environment variables in Vercel Dashboard:**
+- Go to your project → Settings → Environment Variables
+- Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - Redeploy after adding variables
-
-### Alternative: Firebase Hosting
-
-```bash
-firebase deploy --only hosting
-```
 
 ---
 
 ## 💎 What You Get
 
 ✅ **Complete Full-Stack App** - 60+ features ready to use  
-✅ **Firebase Backend** - Firestore, Auth, Storage, Analytics  
+✅ **Supabase Backend** - PostgreSQL, Auth, Storage, Realtime  
 ✅ **AI/ML Integration** - GPT-4 study buddy, grade predictions  
 ✅ **Gamification System** - XP, levels, achievements, streaks  
 ✅ **Social Features** - Study groups, forums, shared notes  
 ✅ **Mobile-Optimized** - PWA-ready, responsive design  
-✅ **Production-Ready** - Vercel-optimized, security rules deployed  
+✅ **Production-Ready** - Vercel-optimized, RLS policies secured  
 
 **Estimated Development Value: $75,000 - $125,000**
 

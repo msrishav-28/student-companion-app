@@ -2,7 +2,7 @@
 
 ## ✅ Vercel-Optimized & Production-Ready
 
-Your Student Companion App is **fully optimized for Vercel deployment** with Next.js 14 and Firebase backend.
+Your Student Companion App is **fully optimized for Vercel deployment** with Next.js 14 and Supabase backend.
 
 ---
 
@@ -43,7 +43,7 @@ vercel --prod
 1. Go to [Vercel Dashboard](https://vercel.com/dashboard)
 2. Select your project
 3. Go to **Settings** → **Environment Variables**
-4. Add all Firebase variables (see below)
+4. Add all Supabase variables (see below)
 5. Redeploy: `vercel --prod`
 
 ### Method 2: Git Integration (Automatic)
@@ -64,7 +64,7 @@ git push -u origin main
 4. Click "Deploy"
 
 **Step 3: Add Environment Variables**
-- In project settings, add all Firebase configuration variables
+- In project settings, add all Supabase configuration variables
 - Vercel will automatically redeploy
 
 ---
@@ -73,15 +73,10 @@ git push -u origin main
 
 Add these in **Vercel Dashboard → Settings → Environment Variables**:
 
-### Firebase Configuration (Required)
+### Supabase Configuration (Required)
 ```
-NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSy...
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=123456789
-NEXT_PUBLIC_FIREBASE_APP_ID=1:123456789:web:abc123
-NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ```
 
 ### Optional Configuration
@@ -118,11 +113,10 @@ const nextConfig = {
   poweredByHeader: false,        // Security
   compress: true,                // Gzip compression
   images: {
-    domains: ['firebasestorage.googleapis.com'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.googleapis.com',
+        hostname: '**.supabase.co',
       },
     ],
   },
@@ -262,8 +256,8 @@ vercel --prod
 **Issue:** Slow build times  
 **Solution:** Check if all dependencies are necessary
 
-**Issue:** Firebase connection fails  
-**Solution:** Verify all Firebase env vars are set correctly
+**Issue:** Supabase connection fails  
+**Solution:** Verify all Supabase env vars are set correctly
 
 ---
 
@@ -323,7 +317,7 @@ vercel rollback
 
 ✅ **HTTPS Everywhere** - Automatic SSL  
 ✅ **Environment Variables** - Secrets not in code  
-✅ **Firebase Security Rules** - Database access control  
+✅ **Supabase RLS Policies** - Database access control  
 ✅ **Content Security Policy** - XSS protection  
 ✅ **CORS Configuration** - API security  
 
@@ -341,9 +335,9 @@ vercel rollback
 - [ ] All dependencies installed (`npm install`)
 - [ ] Build succeeds locally (`npm run build`)
 - [ ] Environment variables documented in `.env.example`
-- [ ] Firebase project created and configured
-- [ ] Firestore security rules deployed
-- [ ] Storage rules deployed
+- [ ] Supabase project created and configured
+- [ ] RLS policies enable
+- [ ] Storage buckets created
 - [ ] Authentication configured (Email/Password enabled)
 - [ ] Vercel account created
 - [ ] Git repository initialized (for auto-deploy)
@@ -379,7 +373,7 @@ vercel rollback
 5. **Setup Monitoring**
    - Enable Vercel Analytics
    - Configure error tracking (optional: Sentry)
-   - Monitor Firebase usage
+   - Monitor Supabase usage
 
 ---
 
@@ -410,7 +404,7 @@ https://your-app.vercel.app
 
 - [Vercel Documentation](https://vercel.com/docs)
 - [Next.js Deployment](https://nextjs.org/docs/deployment)
-- [Firebase + Vercel Guide](https://firebase.google.com/docs/hosting/frameworks/nextjs)
+- [Supabase + Vercel Guide](https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs)
 - [Vercel CLI Reference](https://vercel.com/docs/cli)
 
 ---

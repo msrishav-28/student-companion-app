@@ -8,12 +8,12 @@ Your Student Companion App is a **complete, production-ready full-stack applicat
 
 ## 📊 What You Have
 
-### Database Layer (Firestore Collections)
-- ✅ **Core Collections**: students, subjects, attendance, grades, assignments
+### Database Layer (Supabase PostgreSQL)
+- ✅ **Core Tables**: students, subjects, attendance, grades, assignments
 - ✅ **Gamification**: achievements, xp_transactions, streaks, leaderboard_entries
 - ✅ **Social**: study_groups, forum_threads, shared_notes
 - ✅ **AI & ML**: ai_conversations, ai_messages, predictions
-- **Complete with Firestore security rules and indexes**
+- **Complete with RLS policies and indexes**
 
 ### Services Layer (4 Advanced Services)
 - ✅ `src/lib/services/ai.ts` - OpenAI GPT-4 integration
@@ -75,35 +75,23 @@ npm install
 
 This installs all dependencies:
 - **Core**: Next.js 14, React 18, TypeScript, Tailwind CSS
-- **Backend**: Firebase SDK (Firestore, Auth, Storage)
+- **Backend**: Supabase SDK
 - **Advanced**: Tesseract.js (OCR), OpenAI SDK (AI), TensorFlow.js (ML)
 - **UI**: Framer Motion, Recharts, React Query, Zustand
 
-### Step 2: Set Up Firebase (15 min)
-1. Go to [Firebase Console](https://console.firebase.google.com/) → Create project
-2. Add a web app → Get configuration
+### Step 2: Set Up Supabase (15 min)
+1. Go to [Supabase](https://supabase.com/) → Create project
+2. Get API URL and Anon Key from Settings
 3. Create `.env.local`:
 ```env
-NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 OPENAI_API_KEY=sk-your_openai_key  # For AI features
 ```
 
-4. Firebase Console:
-   - Enable Authentication → Email/Password
-   - Enable Firestore Database → Start in production mode
-   - Enable Storage → Default rules
-5. Deploy security rules:
-```bash
-firebase login
-firebase init
-firebase deploy --only firestore:rules,storage
-```
+4. Run Migration Scripts:
+   - Use the provided SQL scripts to set up the database schema
+   - Enable Auth providers (Email/Password)
    - Add redirect URL: `http://localhost:3000/auth/callback`
 
 ### Step 3: Run Development Server (1 min)
@@ -241,8 +229,8 @@ const allocation = await mlPredictionService.calculateStudyTimeAllocation(
 
 ### Week 1: Setup & Foundation
 1. Install dependencies (`npm install`)
-2. Configure Firebase project
-3. Deploy security rules
+2. Configure Supabase project
+3. Apply database schema
 4. Set up environment variables
 5. Test authentication flow
 
@@ -282,8 +270,8 @@ const allocation = await mlPredictionService.calculateStudyTimeAllocation(
 ### Mark Attendance with Gamification
 ```typescript
 const markAttendance = async (subjectId: string, status: 'present' | 'absent') => {
-  // 1. Save to Firestore
-  await firebaseClient.createDocument('attendance', {
+  // 1. Save to Supabase
+  await supabase.from('attendance').insert({
     student_id: userId,
     subject_id: subjectId,
     subject_name: subjectName, // denormalized for faster queries
@@ -345,9 +333,9 @@ const { data: attendanceData } = useQuery({
 
 ---
 
-## 📊 Firestore Collections Summary
+## 📊 Database Tables Summary
 
-### Core Academic Collections (9 collections)
+### Core Academic Tables (9 tables)
 - `students` - User profiles with XP & level
 - `subjects` - Course information
 - `attendance` - Daily attendance records
@@ -358,7 +346,7 @@ const { data: attendanceData } = useQuery({
 - `exams` - Exam schedules
 - `schedules` - Class timetables
 
-### Gamification Collections (8 collections)
+### Gamification Tables (8 tables)
 - `achievements` - Unlocked badges
 - `xp_transactions` - Experience point history
 - `streaks` - Activity streaks
@@ -368,7 +356,7 @@ const { data: attendanceData } = useQuery({
 - `shared_notes` - Peer materials
 - `note_likes` - Note interactions
 
-### Social Collections (6 collections)
+### Social Tables (6 tables)
 - `forum_threads` - Discussion topics
 - `forum_replies` - Thread responses
 - `peer_comparisons` - Anonymous benchmarks
@@ -376,7 +364,7 @@ const { data: attendanceData } = useQuery({
 - `professor_reviews` - Professor ratings
 - `mentor_connections` - Mentorship links
 
-### AI & ML Collections (8 collections)
+### AI & ML Tables (8 tables)
 - `ai_conversations` - Chat sessions
 - `ai_messages` - Chat messages
 - `predictions` - ML predictions
@@ -386,7 +374,7 @@ const { data: attendanceData } = useQuery({
 - `habits` - Habit tracking
 - `analytics_events` - Usage analytics
 
-**Total: 30+ collections with Firestore security rules**
+**Total: 30+ tables with RLS policies**
 
 ---
 
@@ -529,7 +517,7 @@ Users should see:
 1. **README.md** - Project overview, features, quick start
 2. **QUICK_START.md** - Step-by-step setup guide
 3. **IMPLEMENTATION-GUIDE.md** - This file (comprehensive development guide)
-4. **FIREBASE-PRODUCTION-READY.md** - Firebase setup & deployment
+4. **SUPABASE-SETUP.md** - Supabase setup & deployment
 5. **FIREBASE-MIGRATION-COMPLETE.md** - Firebase architecture details
 6. **COMPLETE-UI-IMPLEMENTATION.md** - Complete page code templates
 7. **IMPLEMENTATION_STATUS.md** - Development task checklist
@@ -559,26 +547,15 @@ vercel --prod
 
 **Step 4: Add Environment Variables**
 1. Go to Vercel Dashboard → Your Project → Settings → Environment Variables
-2. Add all Firebase configuration variables:
-   - `NEXT_PUBLIC_FIREBASE_API_KEY`
-   - `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
-   - `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
-   - `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
-   - `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
-   - `NEXT_PUBLIC_FIREBASE_APP_ID`
-   - `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID`
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
    - `OPENAI_API_KEY` (optional)
 3. Redeploy: `vercel --prod`
 
 **Your app is live!** 🎉
 
-### Option 2: Firebase Hosting (Alternative)
-```bash
 # Build Next.js app
 npm run build
-
-# Deploy to Firebase
-firebase deploy --only hosting
 ```
 
 ### Build & Test Locally
