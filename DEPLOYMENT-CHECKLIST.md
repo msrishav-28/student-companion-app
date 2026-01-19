@@ -6,7 +6,7 @@
 - [ ] Node.js 18+ installed
 - [ ] npm or yarn installed
 - [ ] Git initialized
-- [ ] Firebase CLI installed (`npm i -g firebase-tools`)
+
 - [ ] Vercel CLI installed (`npm i -g vercel`)
 
 ### Supabase Configuration
@@ -124,7 +124,7 @@
 - [ ] Registration works on production
 - [ ] Login works on production
 - [ ] Core features work on production
-- [ ] Firebase connectivity works
+- [ ] Supabase connectivity works
 - [ ] Real-time updates work
 - [ ] File uploads work (Storage)
 - [ ] All API calls succeed
@@ -183,7 +183,7 @@
 
 ### Daily
 - [ ] Check error logs
-- [ ] Monitor Firebase usage
+- [ ] Monitor Supabase usage
 - [ ] Verify uptime
 - [ ] Check user feedback
 

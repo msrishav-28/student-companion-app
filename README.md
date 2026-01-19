@@ -32,7 +32,7 @@ Open [http://localhost:3000](http://localhost:3000)
 - ✅ **Grade Management** - Complete GPA/CGPA calculator with what-if scenarios
 - ✅ **PDF Timetable Parsing** - Automatic schedule extraction
 - ✅ **Document Wallet** - Secure storage for certificates, ID cards, receipts
-- ✅ **Smart Notifications** - ML-powered reminders for classes and deadlines
+- ✅ **Neural Link** - AI-powered personalized tutor with context awareness (formerly AI Buddy)
 
 ### Gamification & Motivation
 - ✅ **XP & Leveling System** - Earn experience points for academic activities
@@ -47,8 +47,9 @@ Open [http://localhost:3000](http://localhost:3000)
 - ✅ **Shared Notes Repository** - Upload and download peer-created study materials
 - ✅ **Peer Comparison** - Anonymous benchmarking against classmates
 
-### AI & ML Features
-- ✅ **AI Study Buddy** - GPT-4 powered personalized tutor with context awareness
+### AI & Neural Link
+- ✅ **Neural Link** - GPT-4 personalized tutor
+- ✅ **Missions** - Gamified assignments and tasks
 - ✅ **ML Grade Predictions** - Predict final grades based on current performance
 - ✅ **Risk Assessment** - Early identification of at-risk academic performance
 - ✅ **Study Time Optimizer** - AI-recommended study schedule allocation
@@ -107,7 +108,7 @@ src/
 - `subjects` - Course information and credits
 - `attendance` - Daily attendance records with status
 - `grades` - Exam scores and performance tracking
-- `assignments` - Tasks, deadlines, and submissions
+- `assignments` - Mission tasks, deadlines, and submissions
 
 **Gamification Collections:**
 - `achievements` - Unlocked badges and rewards
@@ -121,7 +122,7 @@ src/
 - `shared_notes` - Peer-shared study materials
 
 **AI/ML Collections:**
-- `ai_conversations` - Chat history with AI tutor
+- `ai_conversations` - Chat history with Neural Link
 - `ai_messages` - Individual chat messages
 - `predictions` - ML-generated performance predictions
 
@@ -134,8 +135,8 @@ All tables secured with Row Level Security (RLS) policies and optimized with ind
 1. **Setup (Week 1)** - Install dependencies, configure Supabase, apply schema
 2. **Core Features (Week 2-3)** - Authentication, attendance tracking, grade management
 3. **Gamification (Week 4)** - XP system, achievements, streaks, leaderboards
-4. **AI & ML (Week 5-6)** - Study buddy, predictions, risk assessment
-5. **Social & Polish (Week 7-8)** - Study groups, forums, production deployment
+4. **Neural Link (Week 5-6)** - AI tutor, predictions, risk assessment
+5. **Social & Polish (Week 7-8)** - Study groups, missions, forums
 
 **Priority Order:** Authentication → Attendance → Grades → Gamification → AI → Social
 
@@ -164,7 +165,8 @@ vercel --prod
 
 ✅ **Complete Full-Stack App** - 60+ features ready to use  
 ✅ **Supabase Backend** - PostgreSQL, Auth, Storage, Realtime  
-✅ **AI/ML Integration** - GPT-4 study buddy, grade predictions  
+✅ **Neural Link** - GPT-4 study buddy, grade predictions  
+✅ **Missions System** - Gamified assignments and tasks
 ✅ **Gamification System** - XP, levels, achievements, streaks  
 ✅ **Social Features** - Study groups, forums, shared notes  
 ✅ **Mobile-Optimized** - PWA-ready, responsive design  

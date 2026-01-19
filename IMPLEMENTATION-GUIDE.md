@@ -9,10 +9,10 @@ Your Student Companion App is a **complete, production-ready full-stack applicat
 ## 📊 What You Have
 
 ### Database Layer (Supabase PostgreSQL)
-- ✅ **Core Tables**: students, subjects, attendance, grades, assignments
+- ✅ **Core Tables**: students, subjects, attendance, grades, assignments (Missions)
 - ✅ **Gamification**: achievements, xp_transactions, streaks, leaderboard_entries
 - ✅ **Social**: study_groups, forum_threads, shared_notes
-- ✅ **AI & ML**: ai_conversations, ai_messages, predictions
+- ✅ **AI & ML**: ai_conversations (Neural Link), ai_messages, predictions
 - **Complete with RLS policies and indexes**
 
 ### Services Layer (4 Advanced Services)
@@ -51,10 +51,10 @@ Your Student Companion App is a **complete, production-ready full-stack applicat
 - **Smooth Animations**: Framer Motion for all transitions
 - **Mobile First**: 375px base, 44px minimum touch targets
 
-### Typography
-- **Display**: Space Grotesk for headings
-- **Body**: Inter for content
-- **Scale**: 12px-48px responsive font sizes
+### 7. Neural Link (AI Tutor)
+- **Problem**: Context window limit
+- **Solution**: Use sliding window for chat history
+- **Model**: GPT-4 Turbo with JSON mode
 
 ### Color Semantics
 - **Green (#00FF88)**: >85% attendance, high grades, success
@@ -125,7 +125,7 @@ Open [http://localhost:3000](http://localhost:3000) 🎉
 11. Leaderboard - Rankings across multiple categories
 
 **AI & ML**
-12. AI Study Buddy - GPT-4 chat with context
+12. Neural Link - GPT-4 chat with context
 13. ML Predictions - Risk assessment, grade forecasts
 14. Study Optimizer - AI-recommended time allocation
 
@@ -135,7 +135,7 @@ Open [http://localhost:3000](http://localhost:3000) 🎉
 17. Shared Notes - Upload/download materials
 
 **Tools**
-18. Assignments - Kanban board
+18. Missions - Kanban board
 19. Documents - OCR-enabled wallet
 20. Analytics - Performance tracking
 
@@ -167,7 +167,7 @@ Level = floor(sqrt(XP / 100)) + 1
 ### XP Sources
 - Attendance: +10 XP per class
 - Good grades (90+): +100 XP
-- Assignments submitted: +25 XP
+- Missions submitted: +25 XP
 - OCR usage: +50 XP
 - Help peers: +30 XP
 - Daily streak: +5 XP
@@ -175,7 +175,9 @@ Level = floor(sqrt(XP / 100)) + 1
 ### 20+ Achievements
 - **Attendance**: Perfect Week, 7-Day Streak, 30-Day Streak, Century Streak
 - **Grades**: First A+, Dean's List, Scholar (9+ GPA)
-- **Assignments**: Assignment Ninja, Early Bird
+- **Missions**: `/dashboard/assignments` (Gamified Tasks)
+- **Neural Link**: `/dashboard/ai-buddy` (AI Tutor)
+- **Schedule**: `/dashboard/schedule` (Timetable)
 - **Social**: Helpful Peer, Knowledge Sharer
 - **Comebacks**: Comeback King (improved 1+ GPA)
 
@@ -514,11 +516,11 @@ Users should see:
 
 ## 📚 Documentation Structure
 
-1. **README.md** - Project overview, features, quick start
+1. **README.md** - Overview, features, quick start
 2. **QUICK_START.md** - Step-by-step setup guide
 3. **IMPLEMENTATION-GUIDE.md** - This file (comprehensive development guide)
 4. **SUPABASE-SETUP.md** - Supabase setup & deployment
-5. **FIREBASE-MIGRATION-COMPLETE.md** - Firebase architecture details
+5. **SUPABASE-MIGRATION-COMPLETE.md** - Migration details
 6. **COMPLETE-UI-IMPLEMENTATION.md** - Complete page code templates
 7. **IMPLEMENTATION_STATUS.md** - Development task checklist
 8. **idea.md** - Original complete blueprint (MASTER REFERENCE)
