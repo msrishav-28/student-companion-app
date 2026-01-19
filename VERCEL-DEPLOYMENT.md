@@ -1,8 +1,8 @@
-# 🚀 Vercel Deployment Guide - Student Companion App
+# 🚀 Vercel Deployment Guide - WingMan App
 
 ## ✅ Vercel-Optimized & Production-Ready
 
-Your Student Companion App is **fully optimized for Vercel deployment** with Next.js 14 and Supabase backend.
+Your WingMan App is **fully optimized for Vercel deployment** with Next.js 14 and Supabase backend.
 
 ---
 
@@ -53,7 +53,7 @@ vercel --prod
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/yourusername/student-companion.git
+git remote add origin https://github.com/yourusername/WingMan.git
 git push -u origin main
 ```
 

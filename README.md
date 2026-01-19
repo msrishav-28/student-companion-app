@@ -1,4 +1,4 @@
-# 🎓 Student Companion App
+# 🎓 WingMan
 
 A standalone, AI-powered student companion app for managing attendance, grades, assignments, and academic life. Production-ready foundation with gamification, AI, ML, and social features!
 

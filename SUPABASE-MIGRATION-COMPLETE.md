@@ -2,7 +2,7 @@
 
 ## ✅ Status: Production-Ready Full-Stack App
 
-Your Student Companion App is built with **Supabase backend** (PostgreSQL) and a **Cinematic Utility UI**.
+Your WingMan App is built with **Supabase backend** (PostgreSQL) and a **Cinematic Utility UI**.
 
 ---
 

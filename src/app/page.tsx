@@ -113,7 +113,7 @@ export default function LandingPage() {
             <span className="text-xs font-mono">ALL SYSTEMS OPERATIONAL</span>
           </div>
           <p className="text-text-muted text-sm font-mono">
-            © 2026 STUDENT COMPANION // END OF LINE
+            © 2026 WINGMAN // END OF LINE
           </p>
         </div>
       </footer>

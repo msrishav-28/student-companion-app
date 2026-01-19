@@ -1,4 +1,4 @@
-# 🚀 STUDENT COMPANION APP - THE PIVOT MASTER PLAN
+# 🚀 WingMan APP - THE PIVOT MASTER PLAN
 > **Status:** Code Red / High-Value Audit Pivot
 > **Target Audience:** Indian Gen Z (Engineering Students)
 > **Aesthetic:** "Iron Man HUD" / "Cyber-Glass" / "Cinematic Utility"

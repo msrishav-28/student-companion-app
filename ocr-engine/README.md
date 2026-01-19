@@ -25,14 +25,14 @@ To deploy the service and get your public API URL:
 modal deploy ocr_service.py
 ```
 
-This will output a URL like: `https://yourusername--student-companion-ocr-scan.modal.run`
+This will output a URL like: `https://yourusername--wingman-ocr-scan.modal.run`
 
 ## Integration
 Copy the URL and set it in your Next.js environment variables:
 
 In `.env.local`:
 ```bash
-MODAL_OCR_URL=https://yourusername--student-companion-ocr-scan.modal.run
+MODAL_OCR_URL=https://yourusername--wingman-ocr-scan.modal.run
 ```
 
 The Next.js API route (`src/app/api/scan/route.ts`) will automatically use this URL.

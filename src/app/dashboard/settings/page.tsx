@@ -1,5 +1,6 @@
 'use client'
 
+import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import HolographicCard from '@/components/ui/holographic/HolographicCard'
@@ -52,7 +53,7 @@ export default function SettingsPage() {
         const url = URL.createObjectURL(blob)
         const a = document.createElement('a')
         a.href = url
-        a.download = 'student-companion-data.json'
+        a.download = 'wingman-data.json'
         a.click()
         toast.success('System Dump downloaded successfully')
     }

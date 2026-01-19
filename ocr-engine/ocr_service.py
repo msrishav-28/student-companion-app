@@ -13,7 +13,7 @@ image = (
     )
 )
 
-app = modal.App("student-companion-ocr")
+app = modal.App("WingMan-ocr")
 
 # 2. Download the Model weights into the container image
 # This prevents downloading it every time the app starts (Cold Start optimization)

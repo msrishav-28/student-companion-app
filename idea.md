@@ -8,7 +8,7 @@ This is **everything** we discussed. The complete product vision, full feature s
 
 ## 🚀 CORE CONCEPT
 
-**A standalone, AI-powered, all-in-one student companion app that manages every aspect of academic life - attendance, grades, assignments, wellness, social learning, and career prep. Mobile-first PWA with offline capabilities, targeting Gen Z students in India. NOT integrated with university systems - students own their data.**
+**A standalone, AI-powered, all-in-one WingMan app that manages every aspect of academic life - attendance, grades, assignments, wellness, social learning, and career prep. Mobile-first PWA with offline capabilities, targeting Gen Z students in India. NOT integrated with university systems - students own their data.**
 
 ***
 

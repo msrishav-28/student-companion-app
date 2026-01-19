@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Student Companion - Tactical HUD',
+  title: 'WingMan - Tactical HUD',
   description: 'Manage attendance, grades, and academic life with precision.',
   manifest: '/manifest.json',
   themeColor: '#050505',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'Student Companion',
+    title: 'WingMan',
   },
 }
 

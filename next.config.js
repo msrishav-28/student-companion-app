@@ -22,7 +22,7 @@ const nextConfig = {
 
   // Environment variables
   env: {
-    NEXT_PUBLIC_APP_NAME: 'Student Companion',
+    NEXT_PUBLIC_APP_NAME: 'WingMan',
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   },
 

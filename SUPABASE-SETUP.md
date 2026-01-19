@@ -2,7 +2,7 @@
 
 ## ✅ Status: Production-Ready
 
-Your Student Companion App is fully architected to run on **Supabase** (PostgreSQL) with a complete set of features matching the original design.
+Your WingMan App is fully architected to run on **Supabase** (PostgreSQL) with a complete set of features matching the original design.
 
 ---
 
