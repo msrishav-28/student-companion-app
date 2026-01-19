@@ -53,7 +53,7 @@ vercel --prod
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/yourusername/WingMan.git
+git remote add origin https://github.com/msrishav-28/wingman.git
 git push -u origin main
 ```
 
